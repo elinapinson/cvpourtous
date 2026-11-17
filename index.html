@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#24464d">
+<title>Un CV pour tous</title>
+<style>
+:root{--ink:#26383b;--muted:#687477;--paper:#fbfaf7;--surface:#fff;--line:#e8e5df;--accent:#24464d;--accent2:#75c9c9;--soft:#eef5f3;--danger:#c43c45;--shadow:0 12px 35px rgba(35,54,58,.08);--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}.topbar{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,72px);background:rgba(251,250,247,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.brand{font:26px var(--serif);letter-spacing:-1px;color:var(--accent)}.brand span{color:#c28a45}.topnote{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}main{max-width:1160px;margin:auto;padding:38px 22px 70px}.hero{text-align:center;margin:12px auto 34px;max-width:760px}.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#b17e46;font-weight:700}.hero h1{font:clamp(34px,5vw,52px)/1.1 var(--serif);font-weight:400;margin:12px 0}.hero p{color:var(--muted);margin:0 auto;max-width:600px}.steps{display:flex;align-items:center;justify-content:center;gap:8px;margin:28px auto 36px;max-width:760px}.step{display:flex;align-items:center;gap:8px;color:#9a9e9d;font-size:12px}.step b{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;border:1px solid #d7d8d3;font-size:12px}.step.active{color:var(--accent);font-weight:700}.step.active b,.step.done b{background:var(--accent);color:white;border-color:var(--accent)}.step.done{color:var(--accent)}.step-line{height:1px;background:#deded8;width:min(7vw,65px)}.panel{background:var(--surface);border:1px solid #eeece7;border-radius:22px;box-shadow:var(--shadow);padding:clamp(20px,4vw,38px);margin:0 auto 22px}.page{display:none}.page.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font:32px var(--serif);font-weight:400;margin:0 0 7px}.section-head p{color:var(--muted);margin:0;font-size:14px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:760px;margin:auto}.choice{border:1px solid var(--line);border-radius:16px;padding:22px;text-align:left;background:#fff;transition:.2s;min-height:150px;color:var(--ink)}.choice:hover,.choice.selected{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(117,201,201,.18);transform:translateY(-2px)}.choice .symbol{font-size:27px;margin-bottom:10px}.choice h3{font:22px var(--serif);margin:0 0 5px}.choice p{font-size:13px;color:var(--muted);margin:0}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}.field label{font-size:13px;font-weight:700;color:#405154}.field input,.field select,.field textarea{width:100%;border:1px solid #dcded9;border-radius:9px;padding:12px 13px;background:#fff;color:var(--ink);outline:none;min-height:45px}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#75c9c9;box-shadow:0 0 0 3px rgba(117,201,201,.16)}.field.invalid input,.field.invalid select,.field.invalid textarea{border:1.5px solid var(--danger);background:#fff8f8}.error{display:none;color:var(--danger);font-size:12px}.field.invalid .error{display:block}.hint{font-size:12px;color:var(--muted);font-weight:400}.inline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.full{grid-column:1/-1}.subhead{font:21px var(--serif);margin:25px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}.select-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 20px}.select-row label{font-size:13px;font-weight:700}.select-row select{border:1px solid var(--line);border-radius:9px;padding:10px;background:white}.template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.template-card{border:1px solid var(--line);border-radius:13px;padding:10px;background:white;text-align:left;transition:.2s}.template-card.selected{border:2px solid var(--accent);padding:9px;box-shadow:0 0 0 3px rgba(36,70,77,.1)}.template-card strong{display:block;font-size:13px;margin:8px 2px 1px}.template-card small{color:var(--muted);font-size:11px;margin-left:2px}.mini-cv{height:150px;background:#f5f2ec;display:flex;overflow:hidden;border-radius:7px;padding:10px;gap:7px}.mini-side{width:31%;background:var(--mini,#24464d);border-radius:2px}.mini-main{flex:1;padding:7px 3px}.mini-line{height:5px;background:#c9c8c2;margin:7px 0;border-radius:5px}.mini-line.big{height:11px;width:75%;background:#677477}.mini-line.short{width:55%}.palette-grid{display:flex;flex-wrap:wrap;gap:12px}.palette{width:130px;border:2px solid transparent;padding:5px;border-radius:10px;background:white}.palette.selected{border-color:var(--accent)}.swatches{display:flex;height:38px;border-radius:6px;overflow:hidden}.swatches i{flex:1}.palette small{display:block;text-align:center;font-size:11px;color:var(--muted);margin-top:5px}.button-row{display:flex;justify-content:space-between;gap:12px;margin-top:28px}.btn{border:0;border-radius:999px;padding:13px 23px;font-weight:700;font-size:13px;transition:.2s}.btn.primary{background:var(--accent);color:white}.btn.primary:hover{background:#355d63;transform:translateY(-1px)}.btn.secondary{background:#f0f1ed;color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed}.repeat-card{border:1px solid var(--line);border-radius:13px;padding:16px;margin-bottom:13px;position:relative}.repeat-title{font-weight:700;font-size:14px;margin:0 0 12px}.remove{border:0;background:#fff0ef;color:#a43d3d;border-radius:7px;padding:6px 9px;font-size:11px;position:absolute;right:12px;top:10px}.add-btn{border:1px dashed #9cb8b4;color:var(--accent);background:#f7fbf9;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:700}.photo-row{display:flex;align-items:center;gap:15px;margin:4px 0 18px}.photo-preview{width:70px;height:70px;border-radius:50%;background:#f0eee8;display:grid;place-items:center;overflow:hidden;color:#929995;font-size:11px;text-align:center}.photo-preview img{width:100%;height:100%;object-fit:cover}.notice{background:#f1f7f5;border-left:3px solid var(--accent2);padding:12px 15px;border-radius:5px;color:#526467;font-size:12px;margin:15px 0}.tips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tip{background:#f8f7f3;border-radius:12px;padding:15px}.tip b{display:block;font:17px var(--serif);margin-bottom:4px}.tip p{font-size:12px;color:var(--muted);margin:0}.success{text-align:center;padding:20px 0}.success .check{width:58px;height:58px;border-radius:50%;background:#e8f4ee;color:#38745c;display:grid;place-items:center;font-size:28px;margin:0 auto 15px}.success h2{font:34px var(--serif);font-weight:400;margin:0 0 8px}.legal{font-size:13px;color:#596568;max-width:800px;margin:auto}.legal h3{font:20px var(--serif);color:var(--ink);margin:20px 0 6px}.legal p{margin:5px 0}.footer{text-align:center;color:#9a9e9d;font-size:11px;margin-top:25px}
+#cvPreview{display:none;background:white;color:#252b2d;min-height:1050px;width:100%;max-width:800px;margin:20px auto;box-shadow:var(--shadow);font-family:Arial,sans-serif}.cv-sheet{min-height:1050px;display:grid;grid-template-columns:30% 70%;--cv:#24464d;--cv2:#75c9c9}.cv-side{background:var(--cv);color:white;padding:38px 25px}.cv-main{padding:42px 38px}.cv-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.65);display:block;margin:0 auto 22px}.cv-name{font:34px/1.08 var(--serif);margin:0 0 6px;overflow-wrap:anywhere}.cv-job{font-size:13px;color:var(--cv);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:25px}.cv-side h3{font:17px var(--serif);border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:5px;margin:22px 0 9px}.cv-main h3{font:20px var(--serif);color:var(--cv);border-bottom:1px solid #d8dedb;padding-bottom:6px;margin:24px 0 10px}.cv-side p,.cv-side li{font-size:11px;line-height:1.55;overflow-wrap:anywhere}.cv-main p,.cv-main li{font-size:12px;line-height:1.55;margin:4px 0}.cv-item{margin-bottom:13px}.cv-item b{font-size:13px}.cv-date{font-size:10px;color:#7c8584}.cv-skills{display:flex;flex-wrap:wrap;gap:5px}.cv-skills span{background:rgba(255,255,255,.17);border-radius:20px;padding:4px 8px;font-size:10px}.cv-sheet.model-classic{display:block;padding:50px 58px}.model-classic .cv-side{display:none}.model-classic .cv-main{padding:0}.model-classic .cv-name{text-align:center;font-size:38px}.model-classic .cv-job{text-align:center}.model-classic .cv-photo{margin:0 auto 15px}.model-classic .cv-main h3{color:var(--cv);text-transform:uppercase;letter-spacing:1px;font:700 14px Arial}.cv-sheet.model-minimal{display:block;padding:48px 58px}.model-minimal .cv-side{display:none}.model-minimal .cv-main{padding:0}.model-minimal .cv-name{font-size:42px}.model-minimal .cv-job{color:#9a795b}.model-minimal .cv-main h3{border:0;font:700 14px Arial;letter-spacing:1.4px;text-transform:uppercase;color:var(--cv)}.cv-sheet.model-band{grid-template-columns:36% 64%}.model-band .cv-side{padding-top:48px}.cv-sheet.model-asym{grid-template-columns:24% 76%}.model-asym .cv-side{padding:35px 17px}.model-asym .cv-main{padding:52px 42px}.cv-sheet.model-clean{display:block;padding:40px 50px}.model-clean .cv-side{display:none}.model-clean .cv-main{padding:0}.model-clean .cv-name{font-size:32px}.model-clean .cv-job{background:var(--cv);color:white;padding:8px 12px;display:inline-block}
+@media(max-width:700px){.topbar{height:62px}.brand{font-size:22px}.topnote{font-size:9px}.steps{gap:4px}.step{font-size:0;gap:0}.step b{font-size:11px}.step-line{width:9vw}.template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.inline-grid,.choice-grid,.tips{grid-template-columns:1fr}.panel{border-radius:16px}.section-head h2{font-size:27px}.select-row{align-items:flex-start;flex-direction:column}.palette{width:calc(33.333% - 9px)}.button-row .btn{padding:12px 17px}.cv-sheet{grid-template-columns:34% 66%}.cv-side{padding:25px 13px}.cv-main{padding:30px 19px}.cv-name{font-size:25px}.cv-photo{width:78px;height:78px}.cv-sheet.model-classic,.cv-sheet.model-minimal,.cv-sheet.model-clean{padding:28px 22px}.model-classic .cv-name,.model-minimal .cv-name{font-size:29px}}
+@media(max-width:420px){main{padding:25px 12px 50px}.panel{padding:18px 14px}.template-grid{gap:9px}.mini-cv{height:125px}.palette{width:calc(50% - 6px)}.cv-sheet{grid-template-columns:36% 64%}.cv-side{padding:18px 9px}.cv-main{padding:22px 12px}.cv-name{font-size:21px}.cv-main h3{font-size:16px}.cv-side p,.cv-side li,.cv-main p,.cv-main li{font-size:10px}}
+@page{size:A4;margin:0}
+@media print{body{background:white!important}.topbar,main,.footer{display:none!important}#cvPreview{display:block!important;margin:0!important;max-width:none!important;box-shadow:none!important;width:210mm;min-height:297mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}.cv-sheet{min-height:297mm;page-break-after:avoid}.cv-side,.cv-job{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand">un CV <span>pour tous</span></div><div class="topnote">Votre parcours, votre avenir</div></header>
+<main>
+<div class="hero"><div class="eyebrow">L'outil simple pour se lancer</div><h1>Créez un CV qui vous ressemble.</h1><p>Quelques étapes pour mettre en valeur votre parcours, vos compétences et votre personnalité.</p></div>
+<div class="steps" id="steps">
+ <div class="step active"><b>1</b> Type</div><div class="step-line"></div><div class="step"><b>2</b> Modèle</div><div class="step-line"></div><div class="step"><b>3</b> Rédaction</div><div class="step-line"></div><div class="step"><b>4</b> PDF</div><div class="step-line"></div><div class="step"><b>5</b> Mentions</div>
+</div>
+
+<section class="page active panel" id="page1">
+ <div class="section-head"><h2>Quel CV souhaitez-vous créer ?</h2><p>Choisissez la situation qui correspond le mieux à votre parcours.</p></div>
+ <div class="choice-grid">
+  <button class="choice" data-exp="yes"><div class="symbol">✦</div><h3>Avec expérience</h3><p>Vous avez déjà travaillé, effectué un stage ou réalisé des missions.</p></button>
+  <button class="choice" data-exp="no"><div class="symbol">✧</div><h3>Sans expérience</h3><p>Vous débutez et souhaitez valoriser vos études, projets et qualités.</p></button>
+ </div>
+ <div class="field" style="max-width:520px;margin:25px auto 0"><label for="goal">Pourquoi réalisez-vous ce CV ? <span class="hint">(obligatoire)</span></label><select id="goal"><option value="">Sélectionnez votre objectif</option><option>Stage</option><option>Job d'été</option><option>Alternance</option><option>Premier emploi</option><option>Poste dans une entreprise</option><option>Formation</option><option>Autre candidature</option></select><span class="error">Cette case est obligatoire.</span></div>
+ <div class="button-row" style="justify-content:flex-end"><button class="btn primary" id="to2">Continuer →</button></div>
+</section>
+
+<section class="page panel" id="page2">
+ <div class="section-head"><h2>Choisissez votre style</h2><p>Sélectionnez un modèle, puis une palette de couleurs.</p></div>
+ <h3 class="subhead">Les modèles de CV</h3>
+ <div class="template-grid" id="templates">
+  <button class="template-card selected" data-model="modern"><div class="mini-cv" style="--mini:#24464d"><div class="mini-side"></div><div class="mini-main"><div class="mini-line big"></div><div class="mini-line short"></div><div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div></div></div><strong>Moderne</strong><small>Colonne latérale</small></button>
+  <button class="template-card" data-model="classic"><div class="mini-cv"><div class="mini-main"><div class="mini-line big" style="margin:auto"></div><div class="mini-line short" style="margin:8px auto"></div><div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div></div></div><strong>Classique</strong><small>Équilibré et professionnel</small></button>
+  <button class="template-card" data-model="minimal"><div class="mini-cv"><div class="mini-main"><div class="mini-line big"></div><div class="mini-line short"></div><div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div></div></div><strong>Minimaliste</strong><small>Élégant et épuré</small></button>
+  <button class="template-card" data-model="band"><div class="mini-cv" style="--mini:#c28a45"><div class="mini-side" style="width:36%"></div><div class="mini-main"><div class="mini-line big"></div><div class="mini-line short"></div><div class="mini-line"></div><div class="mini-line"></div></div></div><strong>Bande couleur</strong><small>Graphique et affirmé</small></button>
+  <button class="template-card" data-model="asym"><div class="mini-cv" style="--mini:#75c9c9"><div class="mini-side" style="width:23%"></div><div class="mini-main"><div class="mini-line big"></div><div class="mini-line short"></div><div class="mini-line"></div><div class="mini-line"></div></div></div><strong>Asymétrique</strong><small>Original et structuré</small></button>
+  <button class="template-card" data-model="clean"><div class="mini-cv"><div class="mini-main"><div class="mini-line big"></div><div class="mini-line short"></div><div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div></div></div><strong>Sobre</strong><small>Clair et facile à lire</small></button>
+ </div>
+ <h3 class="subhead">Les palettes de couleurs</h3><div class="palette-grid" id="palettes"></div>
+ <div class="button-row"><button class="btn secondary" data-back="1">← Retour</button><button class="btn primary" id="to3">Choisir ce modèle →</button></div>
+</section>
+
+<section class="page panel" id="page3">
+ <div class="section-head"><h2>Construisez votre CV</h2><p>Complétez les informations ci-dessous. Les champs marqués obligatoires doivent être renseignés.</p></div>
+ <form id="cvForm" novalidate>
+ <h3 class="subhead">Informations personnelles</h3>
+ <div class="photo-row"><div class="photo-preview" id="photoPreview">Photo<br>facultative</div><div class="field" style="margin:0;flex:1"><label for="photo">Ajouter une photo (facultatif)</label><input type="file" id="photo" accept="image/*"><span class="hint">Choisissez une image depuis votre appareil.</span></div></div>
+ <div class="inline-grid">
+  <div class="field"><label for="firstName">Prénom *</label><input id="firstName" autocomplete="given-name"><span class="error">Cette case est obligatoire.</span></div>
+  <div class="field"><label for="lastName">Nom *</label><input id="lastName" autocomplete="family-name"><span class="error">Cette case est obligatoire.</span></div>
+  <div class="field"><label for="email">Adresse e-mail *</label><input id="email" type="email" autocomplete="email"><span class="error">Cette case est obligatoire ou l'adresse e-mail est incorrecte.</span></div>
+  <div class="field"><label for="phone">Téléphone *</label><input id="phone" type="tel" autocomplete="tel"><span class="error">Cette case est obligatoire ou le numéro est incorrect.</span></div>
+  <div class="field full"><label for="address">Ville ou adresse *</label><input id="address" autocomplete="street-address"><span class="error">Cette case est obligatoire.</span></div>
+  <div class="field full"><label for="jobTitle">Intitulé souhaité *</label><input id="jobTitle" placeholder="Ex. : Recherche d'un stage en vente"><span class="error">Cette case est obligatoire.</span></div>
+  <div class="field full"><label for="summary">Présentation personnelle</label><textarea id="summary" placeholder="Présentez-vous en quelques phrases : votre objectif, vos qualités et votre motivation."></textarea></div>
+ </div>
+ <h3 class="subhead">Formation</h3><div id="educationList"></div><button type="button" class="add-btn" id="addEducation">＋ Ajouter une formation</button>
+ <h3 class="subhead" id="experienceHeading">Expériences professionnelles</h3><div id="experienceIntro" class="notice">Vous pouvez aussi indiquer vos stages, missions ponctuelles, engagements associatifs ou projets scolaires.</div><div id="experienceList"></div><button type="button" class="add-btn" id="addExperience">＋ Ajouter une expérience</button>
+ <h3 class="subhead">Compétences</h3><div class="inline-grid"><div class="field full"><label for="skills">Vos compétences *</label><textarea id="skills" placeholder="Ex. : Accueil, travail en équipe, maîtrise de Word..."></textarea><span class="error">Cette case est obligatoire.</span><span class="hint">Séparez les compétences par des virgules.</span></div><div class="field"><label for="languages">Langues</label><textarea id="languages" placeholder="Ex. : Anglais — niveau scolaire"></textarea></div><div class="field"><label for="interests">Centres d'intérêt</label><textarea id="interests" placeholder="Ex. : Sport, lecture, bénévolat..."></textarea></div></div>
+ <div class="notice">Vos informations restent dans cette page pendant votre utilisation. Elles ne sont envoyées vers aucun serveur et ne sont pas enregistrées par l'application.</div>
+ </form>
+ <div class="button-row"><button class="btn secondary" data-back="2">← Retour</button><button class="btn primary" id="validateCV">Valider mon CV →</button></div>
+</section>
+
+<section class="page panel" id="page4">
+ <div class="success"><div class="check">✓</div><h2>Votre CV est prêt !</h2><p>Relisez votre document, puis imprimez-le ou enregistrez-le au format PDF.</p></div>
+ <div id="cvPreview"></div>
+ <div class="notice"><b>Pour obtenir votre PDF :</b> cliquez sur « Télécharger mon CV en PDF », puis sélectionnez « Enregistrer au format PDF » dans la fenêtre d'impression de votre navigateur. Vérifiez le format A4 et activez l'impression des arrière-plans/couleurs.</div>
+ <div class="tips">
+  <div class="tip"><b>Soignez la présentation</b><p>Utilisez une mise en page aérée et gardez une taille de texte facile à lire.</p></div>
+  <div class="tip"><b>Personnalisez votre CV</b><p>Adaptez le titre et les compétences à l'offre ou à la formation visée.</p></div>
+  <div class="tip"><b>Soyez précis</b><p>Décrivez vos missions avec des verbes d'action et des exemples concrets.</p></div>
+  <div class="tip"><b>Relisez-vous</b><p>Vérifiez les dates, les coordonnées, l'orthographe et la cohérence des informations.</p></div>
+ </div>
+ <div class="button-row"><button class="btn secondary" data-back="3">← Modifier mon CV</button><button class="btn primary" id="printCV">Télécharger mon CV en PDF ↓</button></div>
+ <div class="button-row" style="justify-content:flex-end"><button class="btn secondary" id="to5">Voir les mentions légales →</button></div>
+</section>
+
+<section class="page panel" id="page5">
+ <div class="section-head"><h2>Mentions légales</h2><p>Informations relatives à l'application Un CV pour tous.</p></div>
+ <div class="legal">
+  <h3>Nom de l'application</h3><p><b>Un CV pour tous</b></p>
+  <h3>Éditeur</h3><p>Elina Pinson, élève en classe de première STMG au lycée Victor Hugo de Gaillac.</p>
+  <h3>Hébergeur</h3><p>GitHub — plateforme d'hébergement du projet.</p>
+  <h3>Sources</h3><p>Les ressources documentaires utilisées pour concevoir les contenus et conseils de l'application sont :</p><ul><li>moncvparfait.fr</li><li>chercheur-emploie.org</li><li>maxicours.com</li><li>fr.indeed.com</li><li>defenseursdesdroits.fr</li><li>mapagecv.com</li></ul>
+  <h3>Données personnelles et cookies</h3><p><b>Aucune donnée personnelle n'est collectée ni enregistrée, aucun cookie n'est utilisé.</b></p><p>Les informations saisies sont utilisées uniquement pour composer le CV affiché dans le navigateur. L'application ne dispose d'aucune base de données et n'envoie pas les informations à un serveur.</p>
+  <h3>Contraintes techniques</h3><ul><li>Un seul fichier index.html, avec le HTML, le CSS et le JavaScript à l'intérieur ;</li><li>Aucune base de données ;</li><li>Aucune donnée enregistrée ;</li><li>Texte en français.</li></ul>
+  <h3>Responsabilité</h3><p>L'utilisateur est responsable de la vérification des informations qu'il ajoute à son CV avant sa diffusion.</p>
+ </div>
+ <div class="button-row"><button class="btn secondary" data-back="4">← Retour au CV</button><button class="btn primary" id="restart">Créer un nouveau CV ↻</button></div>
+</section>
+<div class="footer">Un CV pour tous · Simplement, à votre image.</div>
+</main>
+<script>
+const palettes=[
+ ['Corail & lagon',['#f7958c','#f36f36','#24464d','#75c9c9','#2cc5c8']],
+ ['Nature douce',['#6c665d','#e5cf8e','#5d7055','#c28a45','#f0bc86']],
+ ['Contrastes élégants',['#e7aa1d','#347fc0','#394656','#d3d2d9','#b09a72']],
+ ['Forêt & lumière',['#19534f','#236d68','#edf7f5','#ffe9a4','#d9955b']],
+ ['Poudré',['#ffad9e','#faf1e9','#b49389','#c9ada4','#392f2d']],
+ ['Sauge',['#b8cdd0','#c9e2ce','#aeb8a6','#606d5b','#414442']],
+ ['Bleu minéral',['#147f8c','#759fa8','#b9cdd0','#8199a9','#344e5a']],
+ ['Terre cuite',['#80586f','#a1877c','#c4a087','#a05640','#a96845']],
+ ['Lin & sable',['#f4eee5','#d5cabc','#e7d5cc','#bea18d','#c5a087']],
+ ['Pastel pop',['#b2a6d0','#ed9fbe','#f4df4b','#999b9c','#8cadd4']],
+ ['Ardoise',['#383d4b','#999b9d','#7e4d55','#858a73','#d1c88b']],
+ ['Énergie',['#00a0ad','#cf5a78','#f4df45','#f1efeb','#999b9c']]
+];
+let experience=null,model='modern',paletteIndex=0,photoData='';
+const $=id=>document.getElementById(id);
+function showPage(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$('page'+n).classList.add('active');document.querySelectorAll('.step').forEach((s,i)=>{s.classList.toggle('active',i===n-1);s.classList.toggle('done',i<n-1)});window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{experience=btn.dataset.exp==='yes';document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');}));
+$('to2').onclick=()=>{if(experience===null){alert('Veuillez choisir un type de CV.');return}if(!$('goal').value){$('goal').parentElement.classList.add('invalid');$('goal').focus();return}$('goal').parentElement.classList.remove('invalid');showPage(2)};
+$('goal').addEventListener('change',()=>$('goal').parentElement.classList.remove('invalid'));
+document.querySelectorAll('.template-card').forEach(btn=>btn.addEventListener('click',()=>{model=btn.dataset.model;document.querySelectorAll('.template-card').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected')}));
+const palettesEl=$('palettes');
+palettes.forEach((p,i)=>{const b=document.createElement('button');b.className='palette'+(i===0?' selected':'');b.type='button';b.innerHTML='<span class="swatches">'+p[1].map(c=>`<i style="background:${c}"></i>`).join('')+'</span><small>'+p[0]+'</small>';b.onclick=()=>{paletteIndex=i;document.querySelectorAll('.palette').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};palettesEl.appendChild(b)});
+$('to3').onclick=()=>{showPage(3);$('experienceHeading').textContent=experience?'Expériences professionnelles':'Stages, projets et activités';$('experienceIntro').textContent=experience?'Ajoutez vos emplois, stages ou missions. Si vous débutez, vous pouvez aussi présenter des projets ou engagements.':'Sans expérience professionnelle ? Valorisez vos stages, projets scolaires, activités associatives ou responsabilités personnelles.'};
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>showPage(Number(b.dataset.back)));
+let eduCount=0,expCount=0;
+function addEntry(kind){const isEdu=kind==='edu',list=$(isEdu?'educationList':'experienceList'),n=isEdu?++eduCount:++expCount;const card=document.createElement('div');card.className='repeat-card';card.innerHTML=`<p class="repeat-title">${isEdu?'Formation':'Expérience'} ${n}</p><button type="button" class="remove">Supprimer</button><div class="inline-grid">${isEdu?`
+<div class="field"><label>Diplôme ou formation</label><input data-k="title" placeholder="Ex. : Bac STMG"></div>
+<div class="field"><label>Établissement</label><input data-k="place" placeholder="Nom de l'établissement"></div>
+<div class="field"><label>Année ou période</label><input data-k="date" placeholder="2024 – 2026"></div>
+<div class="field"><label>Ville</label><input data-k="city" placeholder="Ville"></div>`:`
+<div class="field"><label>Poste ou activité</label><input data-k="title" placeholder="Ex. : Stage d'observation"></div>
+<div class="field"><label>Entreprise ou organisme</label><input data-k="place" placeholder="Nom de la structure"></div>
+<div class="field"><label>Période</label><input data-k="date" placeholder="Juin 2025"></div>
+<div class="field"><label>Ville</label><input data-k="city" placeholder="Ville"></div>
+<div class="field full"><label>Missions et réalisations</label><textarea data-k="desc" placeholder="Décrivez les tâches réalisées et ce que vous avez appris."></textarea></div>`}</div>`;
+card.querySelector('.remove').onclick=()=>card.remove();list.appendChild(card)}
+$('addEducation').onclick=()=>addEntry('edu');$('addExperience').onclick=()=>addEntry('exp');addEntry('edu');if(experience!==true)addEntry('exp');
+$('photo').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){alert('Veuillez choisir un fichier image.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{photoData=reader.result;$('photoPreview').innerHTML=`<img src="${photoData}" alt="Photo choisie">`};reader.readAsDataURL(file)});
+function fieldValid(id,check){const el=$(id),wrap=el.closest('.field'),ok=check?check(el.value.trim()):!!el.value.trim();wrap.classList.toggle('invalid',!ok);return ok}
+function entries(id){return [...$(id).querySelectorAll('.repeat-card')].map(c=>Object.fromEntries([...c.querySelectorAll('[data-k]')].map(i=>[i.dataset.k,i.value.trim()])).filter?{}:{});}
+function getEntries(id){return [...$(id).querySelectorAll('.repeat-card')].map(c=>{const o={};c.querySelectorAll('[data-k]').forEach(i=>o[i.dataset.k]=i.value.trim());return o}).filter(o=>o.title||o.place||o.date||o.desc)}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function lines(s){return esc(s).split(/\n|,/).map(x=>x.trim()).filter(Boolean)}
+function makeItems(items){return items.map(o=>`<div class="cv-item"><b>${esc(o.title)}</b><div class="cv-date">${esc([o.place,o.city,o.date].filter(Boolean).join(' · '))}</div>${o.desc?`<p>${esc(o.desc)}</p>`:''}</div>`).join('')}
+function buildCV(){
+ const v=id=>$(id).value.trim(),p=palettes[paletteIndex][1],exp=getEntries('experienceList'),edu=getEntries('educationList');
+ const side=`${photoData?`<img class="cv-photo" src="${photoData}" alt="Photo">`:''}<h3>Contact</h3><p>${esc(v('phone'))}<br>${esc(v('email'))}<br>${esc(v('address'))}</p>${v('languages')?`<h3>Langues</h3><p>${esc(v('languages')).replace(/\n/g,'<br>')}</p>`:''}${v('interests')?`<h3>Centres d'intérêt</h3><p>${esc(v('interests')).replace(/\n/g,'<br>')}</p>`:''}<h3>Compétences</h3><div class="cv-skills">${lines(v('skills')).map(x=>`<span>${esc(x)}</span>`).join('')}</div>`;
+ const main=`<h1 class="cv-name">${esc(v('firstName'))}<br>${esc(v('lastName'))}</h1><div class="cv-job">${esc(v('jobTitle'))}</div>${v('summary')?`<p>${esc(v('summary'))}</p>`:''}<h3>Formation</h3>${makeItems(edu)||'<p>Formation à compléter</p>'}<h3>${experience?'Expériences professionnelles':'Stages, projets et activités'}</h3>${makeItems(exp)||'<p>À compléter</p>'}`;
+ const singleColumn=['classic','minimal','clean'].includes(model);
+ const extra=singleColumn?`<h3>Contact</h3><p>${esc(v('phone'))} · ${esc(v('email'))} · ${esc(v('address'))}</p><h3>Compétences</h3><p>${lines(v('skills')).map(esc).join(' · ')}</p>${v('languages')?`<h3>Langues</h3><p>${esc(v('languages')).replace(/\\n/g,'<br>')}</p>`:''}${v('interests')?`<h3>Centres d'intérêt</h3><p>${esc(v('interests')).replace(/\\n/g,'<br>')}</p>`:''}`:'';
+ const sheet=$('cvPreview');sheet.style.display='block';sheet.innerHTML=`<div class="cv-sheet model-${model}" style="--cv:${p[2]};--cv2:${p[3]}"><aside class="cv-side">${side}</aside><article class="cv-main">${singleColumn&&photoData?`<img class="cv-photo" src="${photoData}" alt="Photo">`:''}${main}${extra}</article></div>`;
+}
+$('validateCV').onclick=()=>{let ok=true;ok=fieldValid('firstName')&&ok;ok=fieldValid('lastName')&&ok;ok=fieldValid('email',x=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x))&&ok;ok=fieldValid('phone',x=>/^[+()\d\s.-]{8,}$/.test(x))&&ok;ok=fieldValid('address')&&ok;ok=fieldValid('jobTitle')&&ok;ok=fieldValid('skills')&&ok;if(!ok){const first=document.querySelector('.field.invalid');first?.scrollIntoView({behavior:'smooth',block:'center'});first?.querySelector('input,textarea')?.focus();return}buildCV();showPage(4)};
+$('printCV').onclick=()=>window.print();$('to5').onclick=()=>showPage(5);
+$('restart').onclick=()=>{if(confirm('Créer un nouveau CV ? Les informations saisies dans cette page seront perdues.'))location.reload()};
+</script>
+</body>
+</html>
